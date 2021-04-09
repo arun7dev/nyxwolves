@@ -31,6 +31,8 @@ dependencies:
   list_wheel_scroll_view_x: ^0.0.2
   #swipper
   flutter_swiper: ^1.1.6
+  #tabbar
+  tab_indicator_styler: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -45,4 +47,7 @@ flutter:
 
   assets:
     - assets/
-    - assets/othergames/
+    - assets/page1/othergames/
+    - assets/navbar/
+    - assets/page1/rating/
+    - assets/page2/
