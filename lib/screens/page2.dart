@@ -92,6 +92,7 @@ class _Page2State extends State<Page2> {
                 ? Stack(
                     children: [
                       Container(
+                        height: MediaQuery.of(context).size.height,
                         decoration: BoxDecoration(
                           image: new DecorationImage(
                             image: new AssetImage("assets/bg.png"),
@@ -103,23 +104,24 @@ class _Page2State extends State<Page2> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               SizedBox(
-                                height: 150,
+                                height: 145,
                               ),
                               Center(
                                 child: Text(
                                   'CONDITIONS',
                                   style: GoogleFonts.fredokaOne(
-                                      fontSize: 17, color: Colors.white),
+                                      fontSize: 13, color: Colors.white),
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(16.0),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 16, vertical: 10),
                                 child: Text(
                                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard ",
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.montserrat(
                                     color: Colors.white,
-                                    fontSize: 12,
+                                    fontSize: 11,
                                   ),
                                 ),
                               ),
@@ -127,7 +129,7 @@ class _Page2State extends State<Page2> {
                                 child: Text(
                                   'READ ALL CONDITIONS',
                                   style: GoogleFonts.fredokaOne(
-                                    fontSize: 11,
+                                    fontSize: 9,
                                     color: Colors.white,
                                     decoration: TextDecoration.underline,
                                   ),
@@ -166,7 +168,7 @@ class _Page2State extends State<Page2> {
                         ),
                       ),
                       Container(
-                        height: 150,
+                        height: 145,
                         width: MediaQuery.of(context).size.width,
                         child: Stack(
                           alignment: Alignment.topCenter,

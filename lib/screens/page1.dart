@@ -1101,13 +1101,13 @@ class _Page1State extends State<Page1> {
                 child: Padding(
                   padding: EdgeInsets.only(bottom: 20),
                   child: Stack(
+                    alignment: Alignment.center,
                     children: [
                       Container(
                         child: Image.asset('assets/appbarright.png'),
                       ),
                       Positioned(
-                        left: 20,
-                        bottom: 20,
+                        left: 15,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -1248,8 +1248,7 @@ class _Page1State extends State<Page1> {
           Container(
             child: CircleAvatar(
               radius: 23.0,
-              backgroundImage: NetworkImage(
-                  'https://images.unsplash.com/photo-1488371934083-edb7857977df?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8bWVufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
+              backgroundImage: AssetImage('assets/page1/user.jpg'),
               backgroundColor: Colors.transparent,
             ),
             decoration: new BoxDecoration(
