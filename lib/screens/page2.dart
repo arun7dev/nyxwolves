@@ -7,6 +7,13 @@ class Page2 extends StatefulWidget {
 }
 
 class _Page2State extends State<Page2> {
+  List colourslistviebuilder = [
+    Colors.yellow[700],
+    Colors.grey[700],
+    Colors.brown,
+    Colors.blue[500],
+    Colors.blue[500],
+  ];
   final List<Widget> _children = [
     Stack(
       children: [
@@ -14,7 +21,7 @@ class _Page2State extends State<Page2> {
           child: Center(
               child: Text(
             'Speacial Pass',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 25, color: Colors.white),
           )),
         ),
         buildummyappbar('Speacial Pass'),
@@ -26,7 +33,7 @@ class _Page2State extends State<Page2> {
           child: Center(
               child: Text(
             'Leaderboard',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 25, color: Colors.white),
           )),
         ),
         buildummyappbar('Leaderboard'),
@@ -38,7 +45,7 @@ class _Page2State extends State<Page2> {
           child: Center(
               child: Text(
             'Features',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 25, color: Colors.white),
           )),
         ),
         buildummyappbar('Features'),
@@ -50,7 +57,7 @@ class _Page2State extends State<Page2> {
           child: Center(
               child: Text(
             'Features',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 25, color: Colors.white),
           )),
         ),
         buildummyappbar('Features'),
@@ -62,7 +69,7 @@ class _Page2State extends State<Page2> {
           child: Center(
               child: Text(
             'Game Type',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 25, color: Colors.white),
           )),
         ),
         buildummyappbar('Game Type'),
@@ -80,6 +87,7 @@ class _Page2State extends State<Page2> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            backgroundColor: Colors.blue[900],
             body: _currentIndex == 2
                 ? Stack(
                     children: [
@@ -90,38 +98,71 @@ class _Page2State extends State<Page2> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Center(
-                              child: Text(
-                                'CONDITIONS',
-                                style: GoogleFonts.fredokaOne(
-                                    fontSize: 17, color: Colors.white),
+                        child: SingleChildScrollView(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              SizedBox(
+                                height: 150,
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Text(
-                                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard ",
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.montserrat(
-                                  color: Colors.white,
-                                  fontSize: 12,
+                              Center(
+                                child: Text(
+                                  'CONDITIONS',
+                                  style: GoogleFonts.fredokaOne(
+                                      fontSize: 17, color: Colors.white),
                                 ),
                               ),
-                            ),
-                            Center(
-                              child: Text(
-                                'READ ALL CONDITIONS',
-                                style: GoogleFonts.fredokaOne(
-                                  fontSize: 11,
-                                  color: Colors.white,
-                                  decoration: TextDecoration.underline,
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard ",
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.montserrat(
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                              Center(
+                                child: Text(
+                                  'READ ALL CONDITIONS',
+                                  style: GoogleFonts.fredokaOne(
+                                    fontSize: 11,
+                                    color: Colors.white,
+                                    decoration: TextDecoration.underline,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              buildlistofprize(colourslistviebuilder[0], 0,
+                                  'Rank 1', 'Rs. 10'),
+                              buildlistofprize(colourslistviebuilder[1], 1,
+                                  'Rank 2', 'Rs. 8'),
+                              buildlistofprize(colourslistviebuilder[2], 2,
+                                  'Rank 3', 'Rs. 6'),
+                              buildlistofprize(colourslistviebuilder[3], 3,
+                                  'Rank 4', 'Rs. 3'),
+                              buildlistofprize(colourslistviebuilder[4], 4,
+                                  'Rank 5', 'Rs. 2'),
+                              ElevatedButton(
+                                child: Text(
+                                  "START GAME",
+                                  style: GoogleFonts.fredokaOne(),
+                                ),
+                                onPressed: () => print("it's pressed"),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.green,
+                                  onPrimary: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(32.0),
+                                      side: BorderSide(
+                                          color: Colors.greenAccent)),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                       Container(
@@ -136,6 +177,13 @@ class _Page2State extends State<Page2> {
                                 width: MediaQuery.of(context).size.width,
                                 decoration: BoxDecoration(
                                     color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black,
+                                        offset: Offset(0.0, 1.0), //(x,y)
+                                        blurRadius: 6.0,
+                                      ),
+                                    ],
                                     borderRadius: BorderRadius.only(
                                         bottomLeft: Radius.circular(30),
                                         bottomRight: Radius.circular(30))),
@@ -168,7 +216,9 @@ class _Page2State extends State<Page2> {
                                                             color: Colors.white,
                                                             size: 10,
                                                           )),
-                                                      onTap: () {},
+                                                      onTap: () {
+                                                        Navigator.pop(context);
+                                                      },
                                                     ),
                                                   ),
                                                 ),
@@ -202,14 +252,62 @@ class _Page2State extends State<Page2> {
                                                           MediaQuery.of(context)
                                                                   .size
                                                                   .width /
-                                                              25,
+                                                              20,
                                                       color: Colors.blue[900]),
                                                 ),
                                               ),
                                               Expanded(
-                                                child: Image.asset(
-                                                    'assets/page2/appbar.png'),
-                                              ),
+                                                  child: Stack(
+                                                alignment: Alignment.center,
+                                                children: [
+                                                  Positioned(
+                                                    child: Container(
+                                                      width: 120,
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.blue[900],
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10),
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(4.0),
+                                                        child: Text(
+                                                          'WATCH DEMO',
+                                                          style: TextStyle(
+                                                            color: Colors.white,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Positioned(
+                                                    right: 0,
+                                                    child: ClipOval(
+                                                      child: Material(
+                                                        color: Colors
+                                                            .green, // button color
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .red, // inkwell color
+                                                          child: SizedBox(
+                                                              child: Icon(
+                                                            Icons
+                                                                .play_arrow_rounded,
+                                                            color: Colors
+                                                                .blue[900],
+                                                          )),
+                                                          onTap: () {
+                                                            Navigator.pop(
+                                                                context);
+                                                          },
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  )
+                                                ],
+                                              )),
                                             ],
                                           ),
                                         )),
@@ -471,6 +569,41 @@ class _Page2State extends State<Page2> {
                 ],
               ),
             )));
+  }
+
+  Padding buildlistofprize(color, index, t1, t2) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        width: MediaQuery.of(context).size.width / 1.5,
+        height: MediaQuery.of(context).size.width / 9,
+        decoration: BoxDecoration(
+            color: color,
+            borderRadius: index == 0
+                ? BorderRadius.only(
+                    topLeft: Radius.circular(30), topRight: Radius.circular(30))
+                : null,
+            border: Border.all(color: Colors.white, width: 2)),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text(
+                t1,
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                t2,
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
 

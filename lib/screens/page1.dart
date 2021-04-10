@@ -5,6 +5,7 @@ import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:list_wheel_scroll_view_x/list_wheel_scroll_view_x.dart';
+import 'package:nyx_wolves/screens/page2.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
@@ -21,7 +22,7 @@ class _Page1State extends State<Page1> {
           child: Center(
               child: Text(
             'Speacial Pass',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 25, color: Colors.white),
           )),
         ),
         buildummyappbar('Speacial Pass'),
@@ -33,7 +34,7 @@ class _Page1State extends State<Page1> {
           child: Center(
               child: Text(
             'Leaderboard',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 25, color: Colors.white),
           )),
         ),
         buildummyappbar('Leaderboard'),
@@ -45,7 +46,7 @@ class _Page1State extends State<Page1> {
           child: Center(
               child: Text(
             'Features',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 25, color: Colors.white),
           )),
         ),
         buildummyappbar('Features'),
@@ -57,7 +58,7 @@ class _Page1State extends State<Page1> {
           child: Center(
               child: Text(
             'Features',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 25, color: Colors.white),
           )),
         ),
         buildummyappbar('Features'),
@@ -69,7 +70,7 @@ class _Page1State extends State<Page1> {
           child: Center(
               child: Text(
             'Game Type',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 25, color: Colors.white),
           )),
         ),
         buildummyappbar('Game Type'),
@@ -144,6 +145,7 @@ class _Page1State extends State<Page1> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          backgroundColor: Colors.blue[900],
           key: scaffoldKey,
           drawer: new Drawer(
             child: Container(color: Colors.blue, child: new ListView()),

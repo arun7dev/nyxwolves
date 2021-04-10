@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.arun7dev.nyx_wolves">
    <application
-        android:label="nyx_wolves"
+        android:label="Tento Test"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
